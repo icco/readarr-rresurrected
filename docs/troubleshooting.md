@@ -47,6 +47,10 @@ refreshes don't update anything. To narrow it down:
 Adding a large author can take a few minutes: the first page of books appears quickly and the rest
 fill in as they arrive.
 
+## Author refresh fails with a series-book foreign-key error
+
+If an author refresh reports `FK_SeriesBookLink_BookId_Books_Id` with `BookId=0`, the series metadata is missing the database ID of a book already in the library. Update to a release containing the series-book ID fix in the [changelog](../CHANGELOG.md), then refresh the affected author again. The fix resolves links to the stored books and requires no database migration.
+
 ## Database disk image is malformed
 
 Readarr's database (`/config/readarr.db`) is damaged. The usual cause is keeping `/config` on a

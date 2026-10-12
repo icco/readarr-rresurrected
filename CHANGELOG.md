@@ -25,6 +25,8 @@ All notable changes to the fork are recorded here.
 
 ### Fixed
 
+- Author refreshes no longer fail with a series-book foreign-key error when metadata links refer to a book already in the library but lack its database ID. Existing series links are updated instead of being recreated with `BookId=0`.
+
 ## [11.2.4] - 2026-10-10
 
 ### New
